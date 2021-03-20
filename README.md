@@ -9,6 +9,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - Step 2: Open a cmd in the project and run ```npm install```
 - Step 3: In cmd use the command ```node src/main.js COMMAND --FLAG```
 - Step 4: Change the default key using the command below.
+- Step 5: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
 
 # Available commands:
 - encrypt with flag --text="text2encrypt"
