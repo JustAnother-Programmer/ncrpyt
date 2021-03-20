@@ -10,7 +10,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - Step 2: Open a command prompt and cd into the project root and run `npm install`
 
 - Step 3: In the command prompt use the commands provided below in this format 
-- ```node src/main.js COMMAND --FLAG``` to use the program.
+- ```node src/main.js COMMAND --FLAG``` to use the program. An example of a command to execute could be ```node src/main.js encrypt --text="test"```
 
 - Step 4: Change the default key using the command below.
 
@@ -18,7 +18,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 # Available commands:
 - encrypt with flag --text="text2encrypt"
-- decrypt with flag --text="text2decypt"
+- decrypt with flag --text="text2decrypt"
 - getKey (no flag needed)
 - setKey with flag --key="newKeyToSet"
 
