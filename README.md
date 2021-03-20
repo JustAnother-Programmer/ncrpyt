@@ -1,5 +1,6 @@
 # ncrpyt
 A simple encryption program which utilises AES256
+This is not extremely secure and is not intended for actual encryption use (I may update this to use envrionment variables at some point for more security)
 
 # How do I use it?
 
