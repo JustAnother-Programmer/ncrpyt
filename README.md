@@ -16,4 +16,4 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - getKey (no flag needed)
 - setKey with flag --key="newKeyToSet"
 
-# Thanks to all the people who made the packages I used!
+### Thanks to all the people who made the packages I used!
