@@ -1,19 +1,20 @@
 const fs = require('fs')
+const path = require('path')
 const chalk = require('chalk')
 const aes256 = require('aes256')
 
 var key = 'defaultkeychangeme'
-key = fs.readFileSync('encryptionKey.key')
+key = fs.readFileSync('encryptionKey.key', 'utf-8')
 
 const encrypt = (text) => {
     var encryptedText = aes256.encrypt(key, text)
-    fs.appendFileSync('../out/encrypts.txt', encryptedText + '\n')
+    fs.appendFileSync(path.join(__dirname, '../../out/encrypts.txt'), encryptedText + '\n')
     console.log(chalk.red(`Your encrypted message: ${encryptedText}`))
 }
 
 const decrypt = (text) => {
     var decryptedText = aes256.decrypt(key, text)
-    fs.appendFileSync('../out/decrypts.txt', `Input: ${text}` + ` Output: ${decryptedText}` + '\n')
+    fs.appendFileSync(path.join(__dirname, '../../out/decrypts.txt',), `Input: ${text}` + ` Output: ${decryptedText}` + '\n')
     console.log(chalk.green(`Your decrypted message: ${decryptedText}`))
 }
 
