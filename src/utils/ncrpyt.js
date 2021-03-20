@@ -12,7 +12,7 @@ const encrypt = (text) => {
 
 const decrypt = (text) => {
     var decryptedText = aes256.decrypt(key, text)
-    fs.appendFileSync('../out/decrypts.txt', decryptedText + '\n')
+    fs.appendFileSync('../out/decrypts.txt', `Input: ${text}` + ` Output: ${decryptedText}` + '\n')
     console.log(chalk.green(`Your decrypted message: ${decryptedText}`))
 }
 
