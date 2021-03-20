@@ -6,9 +6,14 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 # How do I use it?
 
 - Step 1: Download the code
+
 - Step 2: Open a command prompt and cd into the project root and run `npm install`
-- Step 3: In the command prompt use the commands provided below in this format ```node src/main.js COMMAND --FLAG``` to use the program.
+
+- Step 3: In the command prompt use the commands provided below in this format 
+- ```node src/main.js COMMAND --FLAG``` to use the program.
+
 - Step 4: Change the default key using the command below.
+
 - Step 5: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
 
 # Available commands:
