@@ -24,4 +24,10 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - getKey (no flag needed)
 - setKey with flag --key="newKeyToSet"
 
+# Example Usage:
+```node src/main.js setKey --key="mykey"```
+```node src/main.js getKey```
+```node src/main.js encrypt --text="mytext"```
+```node src/main.js decrypt --text="encryptedText"```
+
 ### Thanks to all the people who made the packages I used!
