@@ -14,6 +14,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - An example of a command to execute could be ```node src/main.js encrypt --text="test"```
 
 - Step 4: Change the default key using the command below.
+- ```node src/main.js setKey --key="mynewkey"
 
 - Step 5: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
 
