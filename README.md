@@ -26,8 +26,14 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 # Example Usage:
 ```node src/main.js setKey --key="mykey"```
+
+
 ```node src/main.js getKey```
+
+
 ```node src/main.js encrypt --text="mytext"```
+
+
 ```node src/main.js decrypt --text="encryptedText"```
 
 ### Thanks to all the people who made the packages I used!
