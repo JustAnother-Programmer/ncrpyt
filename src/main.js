@@ -54,4 +54,12 @@ yargs.command({
     }
 })
 
+yargs.command({
+    command: 'listCMDs',
+    describe: 'Lists CMDs',
+    handler() {
+        ncrypt.listCMDs()
+    }
+})
+
 yargs.parse()

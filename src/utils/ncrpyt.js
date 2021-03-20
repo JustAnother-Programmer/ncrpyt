@@ -28,9 +28,18 @@ const getKey = () => {
     console.log(chalk.blue(`Your current key: ${key}`))
 }
 
+const listCMDs = () => {
+    console.log(chalk.white(`The CMDs are`)),
+    console.log(chalk.magenta(`node src/main.js setKey --key="mykey"`)),
+    console.log(chalk.yellow(`node src/main.js getKey`)),
+    console.log(chalk.green(`node src/main.js encrypt --text="mytext"`)),
+    console.log(chalk.red(`node src/main.js decrypt --text="encryptedText"`))
+}
+
 module.exports = {
     getKey: getKey,
     setKey: setKey,
     decrypt: decrypt,
-    encrypt: encrypt
+    encrypt: encrypt,
+    listCMDs: listCMDs
 }
