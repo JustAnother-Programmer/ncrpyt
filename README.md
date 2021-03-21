@@ -7,7 +7,9 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 - Step 1: Download the code
 
-- Step 2: run the run.bat in src
+Step 2: Run install.bat (Skip this if you have already done this)
+
+- Step 2: run the run.bat in src (Do step 2 above if you have not)
 
 - Step 3: Change the default key using the command below.
 - ```node src/main.js setKey --key="mynewkey"```
