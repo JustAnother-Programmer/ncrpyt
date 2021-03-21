@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const aes256 = require('aes256')
 
 var key = 'defaultkeychangeme'
-key = fs.readFileSync('encryptionKey.key', 'utf-8')
+key = fs.readFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), 'utf-8')
 
 const encrypt = (text) => {
     var encryptedText = aes256.encrypt(key, text)
@@ -20,7 +20,7 @@ const decrypt = (text) => {
 
 const setKey = (newKey) => {
     key = newKey
-    fs.writeFileSync('encryptionKey.key', key)
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
     console.log(chalk.blue(`Key is now: ${key}`))
 }
 

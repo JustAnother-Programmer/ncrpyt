@@ -1,1 +1,0 @@
-cmd /k node src/main.js listCMDs
