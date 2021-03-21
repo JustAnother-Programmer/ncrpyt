@@ -7,14 +7,14 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 - Step 1: Download the code
 
-Step 2: Run install.bat (Skip this if you have already done this)
+- Step 2: Run install.bat in src (Skip this if you have already done this)
 
-- Step 2: run the run.bat in src (Do step 2 above if you have not)
+- Step 3: run the run.bat in src
 
-- Step 3: Change the default key using the command below.
+- Step 4: Change the default key using the command below.
 - ```node src/main.js setKey --key="mynewkey"```
 
-- Step 4: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
+- Step 5: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
 
 # Available commands:
 - encrypt with flag --text="text2encrypt"
