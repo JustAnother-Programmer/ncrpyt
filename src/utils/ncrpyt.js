@@ -28,6 +28,12 @@ const getKey = () => {
     console.log(chalk.blue(`Your current key: ${key}`))
 }
 
+const wipe = () => {
+    fs.unlinkSync(path.join(__dirname, '../../out/encrypts.txt'))
+    fs.unlinkSync(path.join(__dirname, '../../out/decrypts.txt'))
+    fs.unlinkSync(path.join(__dirname, '../../keys/encryptionKey.key'))
+}
+
 const listCMDs = () => {
     console.log(chalk.white(`The CMDs are`)),
     console.log(chalk.magenta(`node src/main.js setKey --key="mykey"`)),
@@ -41,5 +47,6 @@ module.exports = {
     setKey: setKey,
     decrypt: decrypt,
     encrypt: encrypt,
-    listCMDs: listCMDs
+    listCMDs: listCMDs,
+    wipe: wipe
 }

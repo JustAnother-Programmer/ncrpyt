@@ -64,4 +64,12 @@ yargs.command({
     }
 })
 
+yargs.command({
+    command: 'wipe',
+    describe: 'Erases all the data in out and keys.',
+    handler() {
+        ncrypt.wipe()
+    }
+})
+
 yargs.parse()
