@@ -1,6 +1,8 @@
 const yargs = require('yargs')
 const ncrypt = require('./utils/ncrpyt.js')
 
+yargs.version('1.1.0')
+
 yargs.command({
     command: 'setKey',
     describe: 'Set the AES256 key.',
