@@ -11,8 +11,10 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 - Step 3: run the run.bat in src
 
+- Note: Please remember to cd into the src folder before running any commands
+
 - Step 4: Change the default key using the command below.
-- ```node src/main.js setKey --key="mynewkey"```
+- ```node main.js setKey --key="mynewkey"```
 
 - Step 5: Anything you encrypt or decrypt will be put into the console and also the 2 text files in the `out` folder
 
@@ -21,6 +23,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - decrypt with flag --text="text2decrypt"
 - getKey (no flag needed)
 - setKey with flag --key="newKeyToSet"
+- wipe (no flag needed)
 
 # Example Usage:
 ```node main.js setKey --key="mykey"```
@@ -34,9 +37,14 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 ```node main.js decrypt --text="encryptedText"```
 
+
+```node main.js wipe```
+
 # Contributors:
 
 @JustAnother-Programmer - Application
+
+
 @StonksSelected - Some application code and Batchfiles
 
 ### Thanks to all the people who made the packages I used!
