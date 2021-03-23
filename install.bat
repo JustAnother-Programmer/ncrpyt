@@ -1,2 +1,4 @@
-cd D:\ncrpyt\src
+@echo off
+cd src
+@echo on
 npm install
