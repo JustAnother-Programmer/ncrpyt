@@ -36,10 +36,11 @@ const wipe = () => {
 
 const listCMDs = () => {
     console.log(chalk.white(`The CMDs are`)),
-    console.log(chalk.magenta(`node src/main.js setKey --key="mykey"`)),
-    console.log(chalk.yellow(`node src/main.js getKey`)),
-    console.log(chalk.green(`node src/main.js encrypt --text="mytext"`)),
-    console.log(chalk.red(`node src/main.js decrypt --text="encryptedText"`))
+    console.log(chalk.magenta(`node main.js setKey --key="mykey"`)),
+    console.log(chalk.yellow(`node main.js getKey`)),
+    console.log(chalk.green(`node main.js encrypt --text="mytext"`)),
+    console.log(chalk.cyan(`node main.js decrypt --text="encryptedText"`)),
+    console.log(chalk.red(`node main.js wipe`))
 }
 
 module.exports = {
