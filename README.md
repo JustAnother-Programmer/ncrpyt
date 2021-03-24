@@ -20,11 +20,15 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - encrypt with flag --text="text2encrypt"
 - decrypt with flag --text="text2decrypt"
 - getKey (no flag needed)
+- resetKey (no flag needed)
 - setKey with flag --key="newKeyToSet"
 - wipe (no flag needed)
 
 # Example Usage:
 ```node main.js setKey --key="mykey"```
+
+
+```node main.js resetKey```
 
 
 ```node main.js getKey```

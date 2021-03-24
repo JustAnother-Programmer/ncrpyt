@@ -65,18 +65,18 @@ yargs.command({
 })
 
 yargs.command({
-    command: 'wipe',
-    describe: 'Erases all the data in out and keys.',
-    handler() {
-        ncrypt.wipe()
-    }
-})
-
-yargs.command({
     command: 'resetKey',
     describe: 'Resets AES256 key to default',
     handler() {
         ncrypt.resetKey()
+    }
+})
+
+yargs.command({
+    command: 'wipe',
+    describe: 'Erases all the data in out and keys.',
+    handler() {
+        ncrypt.wipe()
     }
 })
 
