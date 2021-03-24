@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const aes256 = require('aes256')
 
 var key = 'defaultkeychangeme'
+var defaultkey = 'defaultkeychangeme'
 key = fs.readFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), 'utf-8')
 
 const encrypt = (text) => {
@@ -24,6 +25,12 @@ const setKey = (newKey) => {
     console.log(chalk.blue(`Key is now: ${key}`))
 }
 
+const resetKey = () => {
+    key = defaultkey
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
+    console.log(chalk.blue(`Key is has been reset to: ${key}`))
+}
+
 const getKey = () => {
     console.log(chalk.blue(`Your current key: ${key}`))
 }
@@ -37,6 +44,7 @@ const wipe = () => {
 const listCMDs = () => {
     console.log(chalk.white(`The CMDs are`)),
     console.log(chalk.magenta(`node main.js setKey --key="mykey"`)),
+    console.log(chalk.red(`node main.js resetKey`))
     console.log(chalk.yellow(`node main.js getKey`)),
     console.log(chalk.green(`node main.js encrypt --text="mytext"`)),
     console.log(chalk.cyan(`node main.js decrypt --text="encryptedText"`)),
@@ -46,6 +54,7 @@ const listCMDs = () => {
 module.exports = {
     getKey: getKey,
     setKey: setKey,
+    resetKey: resetKey,
     decrypt: decrypt,
     encrypt: encrypt,
     listCMDs: listCMDs,
