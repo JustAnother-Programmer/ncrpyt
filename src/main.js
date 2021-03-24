@@ -72,4 +72,12 @@ yargs.command({
     }
 })
 
+yargs.command({
+    command: 'resetKey',
+    describe: 'Resets AES256 key to default',
+    handler() {
+        ncrypt.resetKey()
+    }
+})
+
 yargs.parse()
