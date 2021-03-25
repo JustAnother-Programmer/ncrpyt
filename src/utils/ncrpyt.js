@@ -36,19 +36,27 @@ const getKey = () => {
 }
 
 const wipe = () => {
-    fs.unlinkSync(path.join(__dirname, '../../out/encrypts.txt'))
-    fs.unlinkSync(path.join(__dirname, '../../out/decrypts.txt'))
-    fs.unlinkSync(path.join(__dirname, '../../keys/encryptionKey.key'))
+    fs.writeFileSync(path.join(__dirname, '../../out/encrypts.txt'), ""),
+    fs.writeFileSync(path.join(__dirname, '../../out/decrypts.txt'), ""),
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
 }
 
 const listCMDs = () => {
-    console.log(chalk.white(`The CMDs are`)),
-    console.log(chalk.magenta(`node main.js setKey --key="mykey"`)),
-    console.log(chalk.red(`node main.js resetKey`))
-    console.log(chalk.yellow(`node main.js getKey`)),
-    console.log(chalk.green(`node main.js encrypt --text="mytext"`)),
-    console.log(chalk.cyan(`node main.js decrypt --text="encryptedText"`)),
-    console.log(chalk.red(`node main.js wipe`))
+    console.log(chalk.blue(`Key Related CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js setKey --key="mykey"\n` +
+    'Sets AES256 key\n' +
+    `node main.js getKey\n` +
+    'Fetches AES256 key\n' +
+    `node main.js resetKey\n` +
+    `Encryption Related CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js encrypt --text="mytext"\n` +
+    'Encrypt given text\n' +
+    `node main.js decrypt --text="encryptedText"\n` +
+    'Decrypts given text(MUST BE USING THE SAME KEY AS WHEN IT WAS ENCRYPTED)\n' +
+    `Clean up CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js wipe\n` +
+    `Erases all the data in out and reset the key in keys to default.` + 
+    ``))
 }
 
 module.exports = {
