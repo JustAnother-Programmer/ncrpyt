@@ -10,28 +10,27 @@ key = fs.readFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), 
 const encrypt = (text) => {
     var encryptedText = aes256.encrypt(key, text)
     fs.appendFileSync(path.join(__dirname, '../../out/encrypts.txt'), encryptedText + '\n')
-    console.log(chalk.red(`Your encrypted message: ${encryptedText}`))
+    console.log(chalk.blue(`Your encrypted message: ${encryptedText}`))
 }
 
 const decrypt = (text) => {
     var decryptedText = aes256.decrypt(key, text)
     fs.appendFileSync(path.join(__dirname, '../../out/decrypts.txt'), `Input: ${text}` + ` Output: ${decryptedText}` + '\n')
-    console.log(chalk.green(`Your decrypted message: ${decryptedText}`))
+    console.log(chalk.blue(`Your decrypted message: ${decryptedText}`))
 }
 
-const setKey = (newKey) => {
+const setkey = (newKey) => {
     key = newKey
     fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
     console.log(chalk.blue(`Key is now: ${key}`))
 }
 
-const resetKey = () => {
-    key = defaultkey
-    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
-    console.log(chalk.blue(`Key is has been reset to: ${key}`))
+const resetkey = () => {
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
+    console.log(chalk.blue(`Key is has been reset to: ${defaultkey}`))
 }
 
-const getKey = () => {
+const getkey = () => {
     console.log(chalk.blue(`Your current key: ${key}`))
 }
 
@@ -41,13 +40,13 @@ const wipe = () => {
     fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
 }
 
-const listCMDs = () => {
+const listcmds = () => {
     console.log(chalk.blue(`Key Related CMDs\n-------------------------------------------------------------------------\n` +
-    `node main.js setKey --key="mykey"\n` +
+    `node main.js setkey --key="mykey"\n` +
     'Sets AES256 key\n' +
-    `node main.js getKey\n` +
+    `node main.js getkey\n` +
     'Fetches AES256 key\n' +
-    `node main.js resetKey\n` +
+    `node main.js resetkey\n` +
     `Encryption Related CMDs\n-------------------------------------------------------------------------\n` +
     `node main.js encrypt --text="mytext"\n` +
     'Encrypt given text\n' +
@@ -60,11 +59,11 @@ const listCMDs = () => {
 }
 
 module.exports = {
-    getKey: getKey,
-    setKey: setKey,
-    resetKey: resetKey,
+    getkey: getkey,
+    setkey: setkey,
+    resetkey: resetkey,
     decrypt: decrypt,
     encrypt: encrypt,
-    listCMDs: listCMDs,
+    listcmds: listcmds,
     wipe: wipe
 }

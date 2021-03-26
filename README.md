@@ -19,19 +19,20 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 # Available commands:
 - encrypt with flag --text="text2encrypt"
 - decrypt with flag --text="text2decrypt"
-- getKey (no flag needed)
-- resetKey (no flag needed)
-- setKey with flag --key="newKeyToSet"
+- setkey with flag --key="newKeyToSet"
+- resetkey (no flag needed)
+- getkey (no flag needed)
 - wipe (no flag needed)
+- listcmds (no flag needed)
 
 # Example Usage:
-```node main.js setKey --key="mykey"```
+```node main.js setkey --key="mykey"```
 
 
-```node main.js resetKey```
+```node main.js resetkey```
 
 
-```node main.js getKey```
+```node main.js getkey```
 
 
 ```node main.js encrypt --text="mytext"```
@@ -41,6 +42,8 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 
 ```node main.js wipe```
+
+```node main.js listcmds```
 
 # Contributors:
 

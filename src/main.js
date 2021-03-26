@@ -4,7 +4,7 @@ const ncrypt = require('./utils/ncrpyt.js')
 yargs.version('1.2.1')
 
 yargs.command({
-    command: 'setKey',
+    command: 'setkey',
     describe: 'Set the AES256 key.',
     builder: {
         key: {
@@ -14,7 +14,7 @@ yargs.command({
         }
     },
     handler(argv) {
-        ncrypt.setKey(argv.key)
+        ncrypt.setkey(argv.key)
     }
 })
 
@@ -34,10 +34,10 @@ yargs.command({
 })
 
 yargs.command({
-    command: 'getKey',
+    command: 'getkey',
     describe: 'Gets the current AES256 key',
     handler() {
-        ncrypt.getKey()
+        ncrypt.getkey()
     }
 })
 
@@ -57,24 +57,24 @@ yargs.command({
 })
 
 yargs.command({
-    command: 'listCMDs',
+    command: 'listcmds',
     describe: 'Lists CMDs',
     handler() {
-        ncrypt.listCMDs()
+        ncrypt.listcmds()
     }
 })
 
 yargs.command({
-    command: 'resetKey',
+    command: 'resetkey',
     describe: 'Resets AES256 key to default',
     handler() {
-        ncrypt.resetKey()
+        ncrypt.resetkey()
     }
 })
 
 yargs.command({
     command: 'wipe',
-    describe: 'Erases all the data in out and keys.',
+    describe: 'Erases all the data in out and reset the key in keys to default.',
     handler() {
         ncrypt.wipe()
     }
