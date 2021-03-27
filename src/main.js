@@ -19,6 +19,21 @@ yargs.command({
 })
 
 yargs.command({
+    command: 'setdefaultkey',
+    describe: 'Set the default AES256 key.',
+    builder: {
+        key: {
+            describe: 'AES256 Key',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv) {
+        ncrypt.setkey(argv.key)
+    }
+})
+
+yargs.command({
     command: 'encrypt',
     describe: 'Encrypt given text',
     builder: {
