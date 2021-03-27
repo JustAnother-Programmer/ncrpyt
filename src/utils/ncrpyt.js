@@ -28,11 +28,13 @@ const setkey = (newKey) => {
 
 const setdefaultkey = (newKey) => {
     defaultkey = newKey
-    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'),     defaultkey)
+    key = defaultkey
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
     console.log(chalk.blue(`defaultey is now: ${defaultkey}`))
 }
 
 const resetkey = () => {
+    key = defaultkey
     fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
     console.log(chalk.blue(`Key is has been reset to: ${defaultkey}`))
 }
