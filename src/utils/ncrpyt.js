@@ -27,7 +27,7 @@ const setkey = (newKey) => {
 
 const setdefaultkey = (newKey) => {
     defaultkey = newKey
-    console.log(chalk.blue(`defaultey is now: ${defaultkey}`))
+    console.log(chalk.blue(`defaultkey is now: ${defaultkey}`))
 }
 
 const resetkey = () => {
