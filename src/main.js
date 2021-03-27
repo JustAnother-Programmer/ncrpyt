@@ -29,7 +29,7 @@ yargs.command({
         }
     },
     handler(argv) {
-        ncrypt.defaultsetkey(argv.key)
+        ncrypt.setkey(argv.key)
     }
 })
 

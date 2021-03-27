@@ -27,6 +27,7 @@ const setkey = (newKey) => {
 
 const setdefaultkey = (newKey) => {
     defaultkey = newKey
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'),     defaultkey)
     console.log(chalk.blue(`defaultey is now: ${defaultkey}`))
 }
 
