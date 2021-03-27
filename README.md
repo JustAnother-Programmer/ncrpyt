@@ -20,6 +20,7 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 - encrypt with flag --text="text2encrypt"
 - decrypt with flag --text="text2decrypt"
 - setkey with flag --key="newKeyToSet"
+- setdefaultkeykey with flag --key="newKeyToSet"
 - resetkey (no flag needed)
 - getkey (no flag needed)
 - wipe (no flag needed)
@@ -27,6 +28,9 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 # Example Usage:
 ```node main.js setkey --key="mykey"```
+
+
+```node main.js setdefaultkey --key="mykey"```
 
 
 ```node main.js resetkey```
