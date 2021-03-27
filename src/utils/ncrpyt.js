@@ -10,53 +10,71 @@ key = fs.readFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), 
 const encrypt = (text) => {
     var encryptedText = aes256.encrypt(key, text)
     fs.appendFileSync(path.join(__dirname, '../../out/encrypts.txt'), encryptedText + '\n')
-    console.log(chalk.red(`Your encrypted message: ${encryptedText}`))
+    console.log(chalk.blue(`Your encrypted message: ${encryptedText}`))
 }
 
 const decrypt = (text) => {
     var decryptedText = aes256.decrypt(key, text)
     fs.appendFileSync(path.join(__dirname, '../../out/decrypts.txt'), `Input: ${text}` + ` Output: ${decryptedText}` + '\n')
-    console.log(chalk.green(`Your decrypted message: ${decryptedText}`))
+    console.log(chalk.blue(`Your decrypted message: ${decryptedText}`))
 }
 
-const setKey = (newKey) => {
+const setkey = (newKey) => {
     key = newKey
     fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
     console.log(chalk.blue(`Key is now: ${key}`))
 }
 
-const resetKey = () => {
+const setdefaultkey = (newKey) => {
+    defaultkey = newKey
+    console.log(chalk.blue(`defaultey is now: ${defaultkey}`))
+}
+
+const resetkey = () => {
     key = defaultkey
     fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
     console.log(chalk.blue(`Key is has been reset to: ${key}`))
 }
 
-const getKey = () => {
+const getkey = () => {
     console.log(chalk.blue(`Your current key: ${key}`))
 }
 
 const wipe = () => {
-    fs.unlinkSync(path.join(__dirname, '../../out/encrypts.txt'))
-    fs.unlinkSync(path.join(__dirname, '../../out/decrypts.txt'))
-    fs.unlinkSync(path.join(__dirname, '../../keys/encryptionKey.key'))
+    key = defaultkey
+    fs.writeFileSync(path.join(__dirname, '../../out/encrypts.txt'), ""),
+    fs.writeFileSync(path.join(__dirname, '../../out/decrypts.txt'), ""),
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key),
+    console.log(chalk.blue(`Out wiped and key reset your key is now: ${key}`))
 }
 
-const listCMDs = () => {
-    console.log(chalk.white(`The CMDs are`)),
-    console.log(chalk.magenta(`node main.js setKey --key="mykey"`)),
-    console.log(chalk.red(`node main.js resetKey`))
-    console.log(chalk.yellow(`node main.js getKey`)),
-    console.log(chalk.green(`node main.js encrypt --text="mytext"`)),
-    console.log(chalk.cyan(`node main.js decrypt --text="encryptedText"`)),
-    console.log(chalk.red(`node main.js wipe`))
+const listcmds = () => {
+    console.log(chalk.blue(`Key Related CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js setkey --key="mykey"\n` +
+    'Sets AES256 key\n' +
+    `node main.js setdefaultkey --key="mykey"\n` +
+    'Sets defaultkey AES256\n' +
+    `node main.js getkey\n` +
+    'Fetches AES256 key\n' +
+    `node main.js resetkey\n` +
+    `Encryption Related CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js encrypt --text="mytext"\n` +
+    'Encrypt given text\n' +
+    `node main.js decrypt --text="encryptedText"\n` +
+    'Decrypts given text(MUST BE USING THE SAME KEY AS WHEN IT WAS ENCRYPTED)\n' +
+    `Clean up CMDs\n-------------------------------------------------------------------------\n` +
+    `node main.js wipe\n` +
+    `Erases all the data in out and reset the key in keys to default.` + 
+    ``))
 }
 
 module.exports = {
-    getKey: getKey,
-    setKey: setKey,
-    resetKey: resetKey,
+    getkey: getkey,
+    setkey: setkey,
+    setdefaultkey: setdefaultkey,
+    resetkey: resetkey,
     decrypt: decrypt,
     encrypt: encrypt,
-    listCMDs: listCMDs,
+    listcmds: listcmds,
     wipe: wipe
 }
