@@ -6,6 +6,7 @@ const aes256 = require('aes256')
 var key = 'defaultkeychangeme'
 var defaultkey = 'defaultkeychangeme'
 key = fs.readFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), 'utf-8')
+defaultkey = fs.readFileSync(path.join(__dirname + '../../../keys/defaultkey.key'), 'utf-8')
 
 const encrypt = (text) => {
     var encryptedText = aes256.encrypt(key, text)
@@ -32,9 +33,8 @@ const setdefaultkey = (newKey) => {
 }
 
 const resetkey = () => {
-    key = defaultkey
-    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key)
-    console.log(chalk.blue(`Key is has been reset to: ${key}`))
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey)
+    console.log(chalk.blue(`Key is has been reset to: ${defaultkey}`))
 }
 
 const getkey = () => {
@@ -42,11 +42,10 @@ const getkey = () => {
 }
 
 const wipe = () => {
-    key = defaultkey
     fs.writeFileSync(path.join(__dirname, '../../out/encrypts.txt'), ""),
     fs.writeFileSync(path.join(__dirname, '../../out/decrypts.txt'), ""),
-    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), key),
-    console.log(chalk.blue(`Out wiped and key reset your key is now: ${key}`))
+    fs.writeFileSync(path.join(__dirname + '../../../keys/encryptionKey.key'), defaultkey),
+    console.log(chalk.blue(`Out wiped and key reset your key is now: ${defaultkey}`))
 }
 
 const listcmds = () => {
