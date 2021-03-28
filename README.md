@@ -56,4 +56,4 @@ This is not extremely secure and is not intended for actual encryption use (I ma
 
 @StonksSelected - Some application code and Batchfiles
 
-### Thanks to all the people who made the packages I used!ain
+### Thanks to all the people who made the packages we used!
